@@ -5,6 +5,12 @@ const outputEl = document.getElementById("result")
 let lTodo = []
 let html = null
 
+inputEl.addEventListener('keydown', (event) => {
+    if(event.key === 'Enter'){
+        add();
+    }
+});
+
 if(localStorage.getItem("lista")){
     lTodo = JSON.parse(localStorage.getItem("lista"))
     renderTodo()
