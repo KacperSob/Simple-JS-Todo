@@ -34,10 +34,10 @@ function clear2(){
 function renderTodo(){
     localStorage.setItem("lista", JSON.stringify(lTodo))
     outputEl.innerHTML = ""
-    for(i = 0; i < lTodo.length; i++){
-        html = `<li>${lTodo[i]}</li><button onclick="deleteTodo(${i})">DELETE</button>`
+    lTodo.forEach((value, i) => {
+        html = `<li>${value}</li><button onclick="deleteTodo(${i})">DELETE</button>`
         outputEl.innerHTML += html
-    }
+    });
 }
 
 function deleteTodo(x){
